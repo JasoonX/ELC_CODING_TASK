@@ -1,0 +1,25 @@
+section.search-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  background: white;
+  padding: 50px;
+  div.search-result {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #111111;
+    &-description {
+      width: 200px;
+    }
+    h4 {
+      font-weight: 100;
+    }
+  }
+}
+.search-close {
+  color: black;
+}
+* {
+  font-family: "Source Sans Pro", sans-serif;
+}

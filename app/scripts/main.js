@@ -1,45 +1,46 @@
-/**
- * The Initial React Setup file
- * ...
- * 
- * === CSS
+/*
+ * CSS
  * The stylesheets are handled seperately using the gulp sass rather than importing them directly into React.
  * You can find these in the ./app/sass/ folder
- * 
- * == JS
- * All files in here start from this init point for the React Components.
- *  
- * 
- * Firstly we need to import the React JS Library
  */
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 
-import Menu from './components/menu';
-import Home from './components/home';
+// import { StoreContext } from "storeon/react";
 
+import Menu from "./components/Menu/Menu";
+import Home from "./components/Home/Home";
+import Store from "../store/store";
 
-/**
- * We can start our initial App here in the main.js file
- */
-class App extends React.Component {
+class App extends Component {
+  constructor() {
+    super();
 
-    /**
-     * Renders the default app in the window, we have assigned this to an element called root.
-     * 
-     * @returns JSX
-     * @memberof App
-    */
-    render() {
-        return (
-            <div className="App">
-                <Menu />
-                <Home />
-            </div>
-        );
+    this.state = {
+      searchResults: [],
+    };
+  }
+
+  dispatch(action, payload) {
+    switch (action) {
+      case "SEARCH_RESULTS:SET":
+        this.setState({ searchResults: payload });
+        break;
     }
+  }
 
+  render() {
+    return (
+      <Store.Provider
+        value={{ store: this.state, dispatch: this.dispatch.bind(this) }}
+      >
+        <div className="App">
+          <Menu />
+          <Home />
+        </div>
+      </Store.Provider>
+    );
+  }
 }
 
-// Render this out
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
