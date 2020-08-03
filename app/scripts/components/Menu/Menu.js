@@ -22,6 +22,9 @@ const Menu = () => {
         if (searchResults && searchResults.data) {
           dispatch("SEARCH_RESULTS:SET", searchResults.data);
         }
+      })
+      .catch((error) => {
+        dispatch("ERROR:SET", searchResults.data);
       });
   };
 

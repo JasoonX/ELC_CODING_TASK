@@ -11,8 +11,10 @@ app.get("/search/:value?", (request, response) => {
 });
 
 const getSearchResults = (searchedValue = "") => {
-  return data.filter((value) =>
-    value.name.toLowerCase().includes(searchedValue.toLowerCase())
+  return data.filter(
+    (value) =>
+      value.name.toLowerCase().includes(searchedValue.toLowerCase()) ||
+      value.tags.includes(searchedValue.toLowerCase())
   );
 };
 

@@ -18,6 +18,7 @@ class App extends Component {
 
     this.state = {
       searchResults: [],
+      error: "",
     };
   }
 
@@ -25,6 +26,9 @@ class App extends Component {
     switch (action) {
       case "SEARCH_RESULTS:SET":
         this.setState({ searchResults: payload });
+        break;
+      case "ERROR:SET":
+        this.setState({ error: payload });
         break;
     }
   }

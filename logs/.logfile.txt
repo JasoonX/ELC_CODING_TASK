@@ -491,3 +491,14 @@
 [3/8/2020 -- 2:56]  Scripts ran on main.js
 [3/8/2020 -- 2:56]  Scripts ran on main.js
 [3/8/2020 -- 2:57]  Sass ran on files
+[3/8/2020 -- 3:13]  Info task started
+[3/8/2020 -- 3:16]  restarted!
+[3/8/2020 -- 3:17]  restarted!
+[3/8/2020 -- 3:17]  restarted!
+[3/8/2020 -- 3:17]  restarted!
+[3/8/2020 -- 3:18]  Sass ran on files
+[3/8/2020 -- 3:19]  Scripts ran on main.js
+[3/8/2020 -- 3:20]  Scripts ran on main.js
+[3/8/2020 -- 3:20]  Scripts ran on main.js
+[3/8/2020 -- 3:20]  Scripts ran on main.js
+[3/8/2020 -- 12:9]  Info task started
