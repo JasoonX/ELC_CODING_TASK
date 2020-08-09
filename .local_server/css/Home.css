@@ -1,0 +1,5 @@
+section#home { position: absolute; width: 100%; min-height: 100vh; top: 0; left: 0; padding: 122px 50px 50px; background-image: url("/img/header.jpg"); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+
+section#home div.content { max-width: 1280px; margin: 0 auto; color: #fff; }
+
+/*# sourceMappingURL=Home.css.map */

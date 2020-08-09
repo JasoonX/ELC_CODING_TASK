@@ -1,13 +1,6 @@
-/**
- * The menu is technically the header of the site, it contains the styles for the drop down of the Search Bar.
- *
- */
-
-$lineHeightForNav: 70px;
-$lineHeightForSearch: 50px;
+@import "_variables.scss";
 
 header.menu {
-  // ...
   width: 100%;
   position: relative;
   z-index: 10;
@@ -59,38 +52,6 @@ header.menu {
         color: #fff;
         margin-right: 20px;
       }
-    }
-  }
-
-  div.search-container {
-    position: absolute;
-    background-color: white;
-    z-index: 20;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    padding: 5px;
-    background-color: white;
-    border-bottom: 1px solid #ccc;
-    display: none;
-    &.showing {
-      display: block;
-    }
-
-    input[type="text"] {
-      min-width: 100%;
-      font-size: 36px;
-      line-height: $lineHeightForSearch;
-      border: 1px solid #ccc;
-      padding: 0 10px;
-    }
-
-    i.close {
-      color: black;
-      position: absolute;
-      right: 10px;
-      top: 5px;
-      font-size: 36px;
-      line-height: $lineHeightForSearch;
     }
   }
 }

@@ -3,48 +3,56 @@
  * The stylesheets are handled seperately using the gulp sass rather than importing them directly into React.
  * You can find these in the ./app/sass/ folder
  */
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import Home from "./components/Home";
+import Menu from "./components/Menu";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
-// import { StoreContext } from "storeon/react";
+const App = () => {
+  // const [searchResults, setSearchResults] = useState([]);
 
-import Menu from "./components/Menu/Menu";
-import Home from "./components/Home/Home";
-import Store from "../store/store";
+  return (
+    // <Store.Provider
+    //   value={{ store: this.state, dispatch: this.dispatch.bind(this) }}
+    // >
+    <Provider store={store}>
+      <div className="App">
+        <Menu />
+        <Home />
+      </div>
+    </Provider>
+    // </Store.Provider>
+  );
+};
 
-class App extends Component {
-  constructor() {
-    super();
+// class App extends Component {
+//   dispatch(action, payload) {
+//     switch (action) {
+//       case "SEARCH_RESULTS:SET":
+//         this.setState({ searchResults: payload });
+//         break;
+//       case "ERROR:SET":
+//         this.setState({ error: payload });
+//         break;
+//     }
+//   }
 
-    this.state = {
-      searchResults: [],
-      error: "",
-    };
-  }
-
-  dispatch(action, payload) {
-    switch (action) {
-      case "SEARCH_RESULTS:SET":
-        this.setState({ searchResults: payload });
-        break;
-      case "ERROR:SET":
-        this.setState({ error: payload });
-        break;
-    }
-  }
-
-  render() {
-    return (
-      <Store.Provider
-        value={{ store: this.state, dispatch: this.dispatch.bind(this) }}
-      >
-        <div className="App">
-          <Menu />
-          <Home />
-        </div>
-      </Store.Provider>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <Provider store={store}>
+//         <Store.Provider
+//           value={{ store: this.state, dispatch: this.dispatch.bind(this) }}
+//         >
+//           <div className="App">
+//             <Menu />
+//             <Home />
+//           </div>
+//         </Store.Provider>
+//       </Provider>
+//     );
+//   }
+// }
 
 ReactDOM.render(<App />, document.getElementById("root"));
