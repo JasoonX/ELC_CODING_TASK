@@ -30,15 +30,16 @@ header.menu {
       display: inline-block;
       margin-left: 60px;
 
-      i {
-        color: white;
-        font-size: 30px;
-        line-height: $lineHeightForNav;
+      button {
+        background: transparent;
+        border: none;
       }
-      i.search {
-        position: absolute;
-        right: 10px;
-        top: 0;
+      .search-btn {
+        position: relative;
+        top: 5px;
+        i.search {
+          color: white;
+        }
       }
 
       a.nav-item {

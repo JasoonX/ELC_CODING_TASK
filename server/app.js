@@ -11,11 +11,19 @@ app.get("/search/:value?", (request, response) => {
 });
 
 const getSearchResults = (searchedValue = "") => {
-  return data.filter(
-    (value) =>
-      value.name.toLowerCase().includes(searchedValue.toLowerCase()) ||
-      value.tags.includes(searchedValue.toLowerCase())
-  );
+  const nameValues = [];
+  const tagsValues = [];
+  data.forEach((value) => {
+    if (value.name.toLowerCase().includes(searchedValue.toLowerCase())) {
+      nameValues.push(value);
+      return;
+    }
+    if (value.tags.includes(searchedValue.toLowerCase())) {
+      tagsValues.push(value);
+      return;
+    }
+  });
+  return [...nameValues, ...tagsValues];
 };
 
 app.listen(3035);

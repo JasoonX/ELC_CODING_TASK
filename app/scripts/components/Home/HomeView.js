@@ -1,7 +1,7 @@
 import React from "react";
 import SearchResults from "../SearchResults";
 
-const Home = () => {
+const HomeView = () => {
   return (
     <section id="home">
       <div className="content">
@@ -11,4 +11,4 @@ const Home = () => {
   );
 };
 
-module.exports = Home;
+export default HomeView;

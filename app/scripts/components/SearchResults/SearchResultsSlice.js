@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import ProductsService from "../../services/ProductsService";
+import { ProductsService } from "../../services";
 
 export const getSearchResults = createAsyncThunk(
   "searchResults/getSearchResults",
@@ -8,8 +8,7 @@ export const getSearchResults = createAsyncThunk(
     return response.data;
   }
 );
-
-export const searchResultsSlice = createSlice({
+const searchResultsSlice = createSlice({
   name: "searchResults",
   initialState: {
     value: [],

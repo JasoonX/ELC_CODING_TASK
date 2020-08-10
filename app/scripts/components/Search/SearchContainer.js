@@ -1,38 +1,43 @@
-import React, { useState } from "react";
-import debounce from "../../utils/debounce";
-import SearchView from "./SearchView.js";
+import React, { useState, useCallback, useEffect } from "react";
+import SearchView from "./SearchView";
 import { useDispatch, useSelector } from "react-redux";
-import { set, selectSearch } from "./SearchSlice.js";
+import { set, toggle, selectSearch, selectShowSearch } from "./SearchSlice.js";
+import { useDebounce } from "../../hooks";
 
 const SearchContainer = ({ onSearch, onClose }) => {
   const searchedValue = useSelector(selectSearch);
+  const showSearch = useSelector(selectShowSearch);
+
   const dispatch = useDispatch();
 
-  const [showingSearch, setShowingSearch] = useState(false);
-
   const toggleSearch = (e) => {
-    setShowingSearch(!showingSearch);
+    dispatch(toggle());
+
     if (onClose) {
       onClose(e);
     }
   };
 
   const onInput = (e) => {
-    const value = e.target.value;
-
-    dispatch(set(value));
-
-    debounce(onSearch, 300)(value);
+    dispatch(set(e.target.value));
   };
+
+  const debouncedSearchValue = useDebounce(searchedValue, 500);
+
+  useEffect(() => {
+    if (debouncedSearchValue !== null) {
+      onSearch(debouncedSearchValue);
+    }
+  }, [debouncedSearchValue]);
 
   return (
     <SearchView
-      onInput={onInput}
-      toggleSearch={toggleSearch}
       searchedValue={searchedValue}
-      showingSearch={showingSearch}
+      showingSearch={showSearch}
+      toggleSearch={toggleSearch}
+      onInput={onInput}
     />
   );
 };
 
-module.exports = SearchContainer;
+export default SearchContainer;

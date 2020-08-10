@@ -8,9 +8,11 @@ header.menu div.menu-container h1 { font-family: Arial, Helvetica, sans-serif; f
 
 header.menu div.menu-container nav { display: inline-block; margin-left: 60px; }
 
-header.menu div.menu-container nav i { color: white; font-size: 30px; line-height: 70px; }
+header.menu div.menu-container nav button { background: transparent; border: none; }
 
-header.menu div.menu-container nav i.search { position: absolute; right: 10px; top: 0; }
+header.menu div.menu-container nav .search-btn { position: relative; top: 5px; }
+
+header.menu div.menu-container nav .search-btn i.search { color: white; }
 
 header.menu div.menu-container nav a.nav-item { font-family: Helvetica, Arial, Sans-Serif; font-size: 17px; line-height: 70px; text-transform: uppercase; text-decoration: none; white-space: nowrap; border-bottom: 1px solid transparent; color: #fff; margin-right: 20px; }
 

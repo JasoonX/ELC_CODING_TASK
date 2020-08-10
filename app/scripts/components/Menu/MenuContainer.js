@@ -1,8 +1,7 @@
-import axios from "axios";
 import React from "react";
-import MenuView from "./MenuView.js";
 import { useDispatch } from "react-redux";
 import { getSearchResults } from "../SearchResults/SearchResultsSlice";
+import MenuView from "./MenuView";
 const links = [
   "HOLIDAY",
   "WHAT'S NEW",
@@ -23,4 +22,4 @@ const MenuContainer = () => {
   return <MenuView links={links} onSearch={onSearch} />;
 };
 
-module.exports = MenuContainer;
+export default MenuContainer;

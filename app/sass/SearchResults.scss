@@ -4,6 +4,8 @@ section.search-results {
   grid-gap: 50px;
   background: white;
   padding: 50px;
+  border-radius: 4px;
+  box-shadow: 20px 20px 50px #111111;
   div.search-result {
     display: flex;
     align-items: center;
@@ -16,4 +18,13 @@ section.search-results {
       font-weight: 100;
     }
   }
+}
+.search-results-loader {
+  width: 800px;
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }

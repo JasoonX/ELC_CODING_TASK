@@ -22,4 +22,4 @@ const MenuView = ({ links, onSearch }) => {
   );
 };
 
-module.exports = MenuView;
+export default MenuView;

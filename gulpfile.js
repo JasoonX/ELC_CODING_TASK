@@ -157,7 +157,7 @@ gulp.task("scripts", function () {
 
   // Return the task
   return gulp
-    .src("./app/scripts/main.js")
+    .src("./app/scripts/components/App/AppContainer.js")
     .pipe(webpack(webpack_config_dev))
     .on("error", errorLog)
     .pipe(gulp.dest("./" + _devFolder + "/js/"))

@@ -1,9 +1,0 @@
-section.search-results { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 50px; background: white; padding: 50px; }
-
-section.search-results div.search-result { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; color: #111111; }
-
-section.search-results div.search-result-description { width: 200px; }
-
-section.search-results div.search-result h4 { font-weight: 100; }
-
-/*# sourceMappingURL=SearchResults.css.map */

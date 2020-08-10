@@ -1,3 +1,1 @@
-import SearchContainer from "./SearchContainer.js";
-
-module.exports = SearchContainer;
+export { default } from "./SearchContainer.js";

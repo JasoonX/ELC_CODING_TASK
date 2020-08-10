@@ -4,14 +4,17 @@
  *
  * This version will include SourceMaps, Uncompressed JS and HMR.
  */
+const path = require("path");
 
 module.exports = {
   output: {
-    filename: "[name].min.js",
+    filename: "main.min.js",
   },
 
   devtool: "source-map",
-
+  resolve: {
+    modules: [path.resolve(__dirname, "scripts"), "node_modules"],
+  },
   module: {
     rules: [
       {

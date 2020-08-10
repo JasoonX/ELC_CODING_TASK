@@ -1,3 +1,1 @@
-import SearchResultsContainer from "./SearchResultsContainer";
-
-module.exports = SearchResultsContainer;
+export { default } from "./SearchResultsContainer";

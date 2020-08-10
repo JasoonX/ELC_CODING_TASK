@@ -1,3 +1,1 @@
-import HomeView from "./HomeView.js";
-
-module.exports = HomeView;
+export { default } from "./HomeView.js";

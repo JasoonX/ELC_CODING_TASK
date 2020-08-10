@@ -1,6 +1,5 @@
-import ProductsAPI from "../API/ProductsAPI";
 import ApiService from "./ApiService";
-
+import ProductsAPI from "../API/ProductsAPI";
 class ProductsService {
   get config() {
     return {

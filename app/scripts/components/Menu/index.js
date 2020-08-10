@@ -1,3 +1,1 @@
-import MenuContainer from "./MenuContainer.js";
-
-module.exports = MenuContainer;
+export { default } from "./MenuContainer.js";
